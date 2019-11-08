@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hb.dao.EasybuyJK"><!--mapper映射文件  放sql语句  -->  
+            <insert id="zhuce" parameterType="Easybuy_userentity">
+              insert into easybuy_user(loginName,userName,password,sex)
+              values (#{loginName},#{userName},#{password},#{sex})
+             </insert> 
+             <select id="nameCx"  resultType="Easybuy_userentity">
+             select * from easybuy_user
+             
+             </select>
+             <select id="name1Cx"  resultType="Easybuy_userentity">
+             select * from easybuy_user where loginName=#{Name}
+             
+             </select>
+             <insert id="zhuce1" parameterType="Easybuy_userentity1">
+              insert into easybuy_user(loginName,userName,password,sex)
+              values (#{loginName},#{userName},#{password},#{sex})
+             </insert>
+             <insert id="tpaperSt" parameterType="TpaperSt">
+              insert into tpaper(title,type,paperSummary,paperContext,createdBy,creationDate)
+              values (#{title},#{type},#{paperSummary},#{paperContext},#{createdBy},#{creationDate})
+             </insert>
+</mapper>
